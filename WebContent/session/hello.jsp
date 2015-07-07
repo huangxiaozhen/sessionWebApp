@@ -8,18 +8,5 @@
 </head>
 <body>
 
-  <%
-     Cookie cookie = new Cookie( "cookiePath","cookiePathValue" );
-     
-     cookie.setPath( request.getContextPath() );
-     response.addCookie(cookie);
-  %>
-  
-  <a href="../cookie2.jsp"> To getCookiePath Page </a>
-  
-  <%= request.getContextPath() %>
-  
-  
-
 </body>
 </html>

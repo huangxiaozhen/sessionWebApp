@@ -52,6 +52,7 @@
 	 if( tempCookie != null )
 	 {
 		 tempCookie.setMaxAge(0);
+		 response.addCookie(tempCookie);
 	 }
 	
 	 // 添加到cookie中

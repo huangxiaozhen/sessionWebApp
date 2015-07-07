@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page session="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,17 +8,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+ 
+   <%  HttpSession session = request.getSession(); %>
+   
+  <%= session.getId() %>
+  
   <%
-     Cookie cookie = new Cookie( "cookiePath","cookiePathValue" );
-     
-     cookie.setPath( request.getContextPath() );
-     response.addCookie(cookie);
-  %>
   
-  <a href="../cookie2.jsp"> To getCookiePath Page </a>
+  out.print("<br><br>");
   
-  <%= request.getContextPath() %>
+  session.setMaxInactiveInterval(5);
+  
+  out.print( session.getMaxInactiveInterval() );
+  
+  %>   
   
   
 

@@ -8,16 +8,20 @@
 </head>
 <body>
 
+  <%= session.getId() %>
+  
   <%
-     Cookie cookie = new Cookie( "cookiePath","cookiePathValue" );
-     
-     cookie.setPath( request.getContextPath() );
-     response.addCookie(cookie);
+    
+    Cookie cookie = new Cookie( "JSESSIONID",session.getId() );
+    cookie.setMaxAge(20);
+  
+    response.addCookie(cookie);
+  
   %>
   
-  <a href="../cookie2.jsp"> To getCookiePath Page </a>
   
-  <%= request.getContextPath() %>
+  
+  
   
   
 

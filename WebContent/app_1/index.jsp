@@ -23,7 +23,7 @@
 	  for( Cookie cookie : cookies )
 	  {
 		  String cookieName = cookie.getName();
-		  if( cookie.getValue().equals( "customer" ) )
+		  if( cookieName.equals("customer") )
 		  {
 			  String value = cookie.getValue();
 			  name = value; 
@@ -41,7 +41,6 @@
   {
 	  response.sendRedirect("login.jsp");
   }
-  
   
   %>
 

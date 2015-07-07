@@ -8,18 +8,23 @@
 </head>
 <body>
 
-  <%
-     Cookie cookie = new Cookie( "cookiePath","cookiePathValue" );
+   sessionId: <%= session.getId() %>
+   <br><br>
+   
+   isNew:<%= session.isNew() %>
+   <br><br>
+   
+   createTime:<%= session.getCreationTime() %>
+   <br><br>
+   
+   lastAccessTime:<%= session.getLastAccessedTime() %>
+   <br><br>
+   
+   <form action="login.jsp" method="post">
+    
+      userName:<>
      
-     cookie.setPath( request.getContextPath() );
-     response.addCookie(cookie);
-  %>
-  
-  <a href="../cookie2.jsp"> To getCookiePath Page </a>
-  
-  <%= request.getContextPath() %>
-  
-  
+   </form>
 
 </body>
 </html>
